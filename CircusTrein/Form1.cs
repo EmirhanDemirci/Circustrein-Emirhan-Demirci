@@ -9,19 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using CircusTrein.Models;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CircusTrein
 {
     public partial class Form1 : Form
     {
-        private Train _train;
-        List<Animal> Animals = new List<Animal>();
+        private readonly Train _train;
+        readonly List<Animal> _animals = new List<Animal>();
 
         public Form1()
         {
-            _train = new Train();
             InitializeComponent();
+            _train = new Train();
             cbxTypeAnimal.DataSource = Enum.GetValues(typeof(TypeAnimal));
             cbxFormatAnimal.DataSource = Enum.GetValues(typeof(Format));
         }
@@ -34,7 +33,7 @@ namespace CircusTrein
             Enum.TryParse<Format>(cbxFormatAnimal.SelectedValue.ToString(), out format);
 
             var animal = new Animal(typeAnimal, format);
-            Animals.Add(animal);
+            _animals.Add(animal);
             listBox1.Items.Add($"Type: {animal.GetTypeAnimal()}");
             listBox1.Items.Add($"Format: {animal.GetFormat()}");
             listBox1.Items.Add($"Points: {animal.GetPoints()}");
@@ -42,7 +41,7 @@ namespace CircusTrein
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            foreach (var animal in Animals)
+            foreach (var animal in _animals)
             {
                 if (!_train.GetWagon().Any())
                 {
@@ -74,6 +73,7 @@ namespace CircusTrein
             var wagon = new Wagon();
             wagon.AddAnimal(animal);
             _train.AddWagon(wagon);
+            listBox2.Items.Add(wagon.ToString());
         }
     }
 }

@@ -23,8 +23,8 @@ namespace CircusTrein
 
     public class Animal
     {
-        private TypeAnimal _type;
-        private Format _format;
+        private readonly TypeAnimal _type;
+        private readonly Format _format;
         private int _points;
 
         public Animal(TypeAnimal typeAnimal, Format format)

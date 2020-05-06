@@ -8,7 +8,7 @@ namespace CircusTrein.Models
 {
     public class Train
     {
-        private List<Wagon> _wagons;
+        private readonly List<Wagon> _wagons;
 
         public Train()
         {

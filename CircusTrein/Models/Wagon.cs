@@ -8,7 +8,7 @@ namespace CircusTrein.Models
 {
     public class Wagon
     {
-        private List<Animal> _animals;
+        private readonly List<Animal> _animals;
         private static int _Id;
 
         public Wagon()
@@ -54,8 +54,8 @@ namespace CircusTrein.Models
         {
             if (animal.GetTypeAnimal() == TypeAnimal.Herbivore)
             {
-                var checkCarniSize = _animals.Find(x => (x.GetTypeAnimal() == TypeAnimal.Carnivore) && (x.GetFormat() >= animal.GetFormat()));
-                return checkCarniSize == null;
+                var checkCarnivoreSize = _animals.Find(x => (x.GetTypeAnimal() == TypeAnimal.Carnivore) && (x.GetFormat() >= animal.GetFormat()));
+                return checkCarnivoreSize == null;
             }
 
             var checkCarnivore = _animals.Find(x => x.GetTypeAnimal() == TypeAnimal.Carnivore);
@@ -65,7 +65,7 @@ namespace CircusTrein.Models
 
         public override string ToString()
         {
-            return $"{_Id} Wagons ";
+            return $"{_Id} Wagons";
         }
     }
 }
