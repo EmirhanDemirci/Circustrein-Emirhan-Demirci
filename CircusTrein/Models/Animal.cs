@@ -65,5 +65,9 @@ namespace CircusTrein
         {
             return _points;
         }
+        public override string ToString()
+        {
+            return $"{_type}, {_format}";
+        }
     }
 }

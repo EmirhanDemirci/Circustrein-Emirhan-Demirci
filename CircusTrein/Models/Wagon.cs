@@ -10,11 +10,17 @@ namespace CircusTrein.Models
     {
         private readonly List<Animal> _animals;
         private static int _Id;
+        private int _number;
 
         public Wagon()
         {
             _animals = new List<Animal>();
-            _Id++;
+            _number = _Id++;
+        }
+
+        public List<Animal> GetAllAnimals()
+        {
+            return _animals;
         }
 
         //Getting the total points of each wagon
@@ -65,7 +71,7 @@ namespace CircusTrein.Models
 
         public override string ToString()
         {
-            return $"{_Id} Wagons";
+            return $"Wagon: {_number}";
         }
     }
 }

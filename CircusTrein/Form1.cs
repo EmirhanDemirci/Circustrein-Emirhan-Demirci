@@ -37,6 +37,7 @@ namespace CircusTrein
             listBox1.Items.Add($"Type: {animal.GetTypeAnimal()}");
             listBox1.Items.Add($"Format: {animal.GetFormat()}");
             listBox1.Items.Add($"Points: {animal.GetPoints()}");
+            lblAnimals.Text = _animals.Count().ToString();
         }
 
         private void btnCalculate_Click(object sender, EventArgs e)
@@ -66,6 +67,8 @@ namespace CircusTrein
                     CreateWagon(animal);
                 }
             }
+
+            listBox2.DataSource = _train.GetWagon();
         }
 
         private void CreateWagon(Animal animal)
@@ -74,6 +77,12 @@ namespace CircusTrein
             wagon.AddAnimal(animal);
             _train.AddWagon(wagon);
             listBox2.Items.Add(wagon.ToString());
+        }
+
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Wagon selectedWagon = listBox2.SelectedItem as Wagon;
+            listBox3.DataSource = selectedWagon.GetAllAnimals();
         }
     }
 }
