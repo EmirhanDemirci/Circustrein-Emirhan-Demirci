@@ -36,11 +36,13 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblAnimals = new System.Windows.Forms.Label();
+            this.lblHerbivore = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCalculate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblCarnivore = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             this.groupBox1.Controls.Add(this.cbxFormatAnimal);
             this.groupBox1.Controls.Add(this.btnAddAnimal);
             this.groupBox1.Controls.Add(this.cbxTypeAnimal);
-            this.groupBox1.Location = new System.Drawing.Point(12, 42);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 175);
             this.groupBox1.TabIndex = 6;
@@ -114,18 +116,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Aantal Animals:";
+            this.label3.Text = "Herbivores:";
             // 
-            // lblAnimals
+            // lblHerbivore
             // 
-            this.lblAnimals.AutoSize = true;
-            this.lblAnimals.Location = new System.Drawing.Point(100, 9);
-            this.lblAnimals.Name = "lblAnimals";
-            this.lblAnimals.Size = new System.Drawing.Size(16, 13);
-            this.lblAnimals.TabIndex = 12;
-            this.lblAnimals.Text = "...";
+            this.lblHerbivore.AutoSize = true;
+            this.lblHerbivore.Location = new System.Drawing.Point(82, 9);
+            this.lblHerbivore.Name = "lblHerbivore";
+            this.lblHerbivore.Size = new System.Drawing.Size(16, 13);
+            this.lblHerbivore.TabIndex = 12;
+            this.lblHerbivore.Text = "...";
             // 
             // label4
             // 
@@ -165,13 +167,33 @@
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Carnivores:";
+            // 
+            // lblCarnivore
+            // 
+            this.lblCarnivore.AutoSize = true;
+            this.lblCarnivore.Location = new System.Drawing.Point(82, 27);
+            this.lblCarnivore.Name = "lblCarnivore";
+            this.lblCarnivore.Size = new System.Drawing.Size(16, 13);
+            this.lblCarnivore.TabIndex = 15;
+            this.lblCarnivore.Text = "...";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 474);
+            this.Controls.Add(this.lblCarnivore);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblAnimals);
+            this.Controls.Add(this.lblHerbivore);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.btnCalculate);
@@ -197,11 +219,13 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblAnimals;
+        private System.Windows.Forms.Label lblHerbivore;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblCarnivore;
     }
 }
 

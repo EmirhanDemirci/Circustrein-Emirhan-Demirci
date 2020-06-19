@@ -94,7 +94,7 @@ namespace XUnitCircusTrein
         }
 
         [Fact]
-        public void CheckRules_2_Small_Carnivore_And_4_Medium_Herbivore_Returns_True()
+        public void CheckRules_2_Small_Carnivore_And_4_Medium_Herbivore_Returns_False()
         {
             // Arrange
             Animal animal1 = new Animal(TypeAnimal.Carnivore, Format.Small);
@@ -150,6 +150,24 @@ namespace XUnitCircusTrein
 
             // Assert
             Assert.True(ruleChecked);
+        }
+        [Fact]
+        public void CheckRules_2_Small_Herbivore_And_2_Small_Carnivore_Returns_False()
+        {
+            // Arrange
+            Animal animal1 = new Animal(TypeAnimal.Herbivore, Format.Small);
+            Animal animal2 = new Animal(TypeAnimal.Herbivore, Format.Small);
+            Animal animal3 = new Animal(TypeAnimal.Carnivore, Format.Small);
+            Animal animal4 = new Animal(TypeAnimal.Carnivore, Format.Small);
+            _wagon.AddAnimal(animal1);
+            _wagon.AddAnimal(animal2);
+            _wagon.AddAnimal(animal3);
+
+            // Act
+            var ruleChecked = _wagon.CheckRules(animal4);
+
+            // Assert
+            Assert.False(ruleChecked);
         }
     }
 }

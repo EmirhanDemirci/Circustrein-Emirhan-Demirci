@@ -37,9 +37,13 @@ namespace CircusTrein
             listBox1.Items.Add($"Type: {animal.GetTypeAnimal()}");
             listBox1.Items.Add($"Format: {animal.GetFormat()}");
             listBox1.Items.Add($"Points: {animal.GetPoints()}");
-            lblAnimals.Text = _animals.Count().ToString();
+            lblHerbivore.Text = _animals.Count().ToString();
+            var herbivore = _animals.FindAll(x => x.GetTypeAnimal() == TypeAnimal.Herbivore);
+            var carnivore = _animals.FindAll(x => x.GetTypeAnimal() == TypeAnimal.Carnivore);
+            lblHerbivore.Text = herbivore.Count.ToString();
+            lblCarnivore.Text = carnivore.Count.ToString();
         }
-
+            
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             foreach (var animal in _animals)
