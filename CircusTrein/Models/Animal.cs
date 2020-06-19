@@ -7,7 +7,6 @@ using CircusTrein;
 
 namespace CircusTrein
 {
-    //TODO Engels!!
     public enum TypeAnimal
     {
         Carnivore,
